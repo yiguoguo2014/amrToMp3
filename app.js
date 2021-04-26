@@ -1,8 +1,7 @@
+import urlJoin from 'proper-url-join';
 const exec = require('child_process').exec;
-// const path = require('path-parse');
 const pathParse = require('path-parse');
 const normalize = require('normalize-path');
-const urlJoin = require('proper-url-join');
 const ffmpegPath = require('ffmpeg-static');
 
 function amrToMp3 (filepath, outputDir = './src/mp3', outputName) {
