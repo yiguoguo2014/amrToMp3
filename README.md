@@ -15,7 +15,7 @@ down https://github.com/Binaryify/amrToMp3
 ## Installation
 This module is installed via npm:
 ```
-$ npm install amrToMp3_sx
+$ npm install amr_to_mp3_sx
 ```
 ## api
 ```js
