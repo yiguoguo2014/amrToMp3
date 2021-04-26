@@ -6,7 +6,7 @@ var _properUrlJoin2 = _interopRequireDefault(_properUrlJoin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var exec = require('child_process').exec;
+var exec = require('exec');
 var pathParse = require('path-parse');
 var normalize = require('normalize-path');
 var ffmpegPath = require('ffmpeg-static');

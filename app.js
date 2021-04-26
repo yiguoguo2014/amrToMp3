@@ -1,5 +1,5 @@
 import urlJoin from 'proper-url-join';
-const exec = require('child_process').exec;
+const exec = require('exec');
 const pathParse = require('path-parse');
 const normalize = require('normalize-path');
 const ffmpegPath = require('ffmpeg-static');
