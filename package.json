@@ -1,6 +1,6 @@
 {
   "name": "amr_to_mp3_sx",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "",
   "main": "build/app.js",
   "scripts": {
