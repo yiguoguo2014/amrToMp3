@@ -15,7 +15,7 @@
   "author": "traveller",
   "license": "MIT",
   "dependencies": {
-    "exec": "^0.2.1",
+    "child-process-promise": "^2.2.1",
     "ffmpeg-static": "^4.2.7",
     "normalize-path": "^3.0.0",
     "path-parse": "^1.0.6",
