@@ -1,8 +1,10 @@
 'use strict';
 
 var exec = require('child_process').exec;
-var path = require('path-parse');
+// const path = require('path-parse');
 var pathParse = require('path-parse');
+var normalize = require('normalize-path');
+var urlJoin = require('proper-url-join');
 var ffmpegPath = require('ffmpeg-static');
 
 function amrToMp3(filepath) {
@@ -22,14 +24,14 @@ function amrToMp3(filepath) {
 			return;
 		}
 		var _outputName = outputName || filename;
-		var cmdStr = ffmpegPath + ' -y -i "' + path.normalize(filepath) + '" -acodec libmp3lame -ar 24000 -vol 500 -ab 128 "' + path.join(outputDir, _outputName + '.mp3') + '"';
+		var cmdStr = ffmpegPath + ' -y -i "' + normalize(filepath) + '" -acodec libmp3lame -ar 24000 -vol 500 -ab 128 "' + urlJoin(outputDir, _outputName + '.mp3') + '"';
 		exec(cmdStr, function (err, stdout, stderr) {
 			if (err) {
 				// console.log('error:' + stderr);
 				reject(new Error('error:' + stderr));
 			} else {
 				resolve(outputDir + '/' + _outputName + '.mp3');
-				// console.log(`transform to mp3 success!  ${path.normalize(filepath)}->${path.join(outputDir, _outputName + '.mp3')}`);
+				// console.log(`transform to mp3 success!  ${normalize(filepath)}->${urlJoin(outputDir, _outputName + '.mp3')}`);
 			}
 		});
 	});
