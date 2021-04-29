@@ -2,7 +2,8 @@
 amr to mp3 nodeJS module
 
 amr音频转mp3模块
-down https://github.com/Binaryify/amrToMp3
+
+by https://github.com/Binaryify/amrToMp3
 
 <p>
 <a href="https://www.npmjs.com/package/amrToMp3"><img src="https://img.shields.io/npm/v/amrToMp3.svg" alt="Version"></a>
