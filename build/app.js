@@ -6,7 +6,7 @@ var _properUrlJoin2 = _interopRequireDefault(_properUrlJoin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var exec = require('ssh-exec');
+// const execa = require('execa');
 var pathParse = require('path-parse');
 var normalize = require('normalize-path');
 var ffmpegPath = require('ffmpeg-static');
@@ -29,15 +29,21 @@ function amrToMp3(filepath) {
 		}
 		var _outputName = outputName || filename;
 		var cmdStr = ffmpegPath + ' -y -i "' + normalize(filepath) + '" -acodec libmp3lame -ar 24000 -vol 500 -ab 128 "' + (0, _properUrlJoin2.default)(outputDir, _outputName + '.mp3') + '"';
-		exec(cmdStr, function (err, stdout, stderr) {
-			if (err) {
-				// console.log('error:' + stderr);
-				reject(new Error('error:' + stderr));
-			} else {
-				resolve(outputDir + '/' + _outputName + '.mp3');
-				// console.log(`transform to mp3 success!  ${path.normalize(filepath)}->${path.join(outputDir, _outputName + '.mp3')}`);
-			}
-		});
+		return cmdStr;
+		// execa(cmdStr).then(() => {
+		// 	resolve(`${outputDir}/${_outputName}.mp3`);
+		// }).catch(err => {
+		// 	reject(new Error('error:' + err));
+		// })
+		// exec(cmdStr, (err, stdout, stderr) => {
+		// 	if (err) {
+		// 		// console.log('error:' + stderr);
+		// 		reject(new Error('error:' + stderr));
+		// 	} else {
+		// 		resolve(`${outputDir}/${_outputName}.mp3`);
+		// 		// console.log(`transform to mp3 success!  ${path.normalize(filepath)}->${path.join(outputDir, _outputName + '.mp3')}`);
+		// 	}
+		// });
 	});
 }
 
