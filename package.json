@@ -1,6 +1,6 @@
 {
   "name": "amr_to_mp3_sx",
-  "version": "0.3.0",
+  "version": "0.2.0",
   "description": "",
   "main": "build/app.js",
   "scripts": {
@@ -15,7 +15,11 @@
   "author": "traveller",
   "license": "MIT",
   "dependencies": {
-    "ffmpeg-static": "^4.2.7"
+    "ffmpeg-static": "^4.2.7",
+    "normalize-path": "^3.0.0",
+    "path-parse": "^1.0.6",
+    "proper-url-join": "^2.1.1",
+    "ssh-exec": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
